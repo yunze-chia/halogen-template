@@ -1,0 +1,26 @@
+{
+  "name": "halogen-template",
+  "scripts": {
+    "lint": "npm run lint:purty",
+    "lint:fix": "npm run lint:purty:fix",
+    "lint:purty": "purty validate src",
+    "lint:purty:fix": "purty src --write",
+    "clean": "rm -rf dist && mkdir dist",
+    "clean:all": "npm run clean && rm -rf .spago .parcel-cache output node_modules && rm -f assets/app.js",
+    "serve": "npm run clean && npm run build && npm run bundle:static && parcel assets/index-dev.html",
+    "build": "spago build",
+    "bundle": "npm run lint && npm run clean && npm run bundle:spago && npm run bundle:static && npm run bundle:parcel",
+    "bundle:static": "cp -r assets/static dist/static",
+    "bundle:spago": "spago bundle-app --to assets/app.js",
+    "bundle:parcel": "parcel build assets/index.html --no-scope-hoist --no-source-maps"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.1.1",
+    "postcss": "^8.4.5",
+    "purescript": "^0.14.5",
+    "purty": "^7.0.0",
+    "spago": "^0.20.3",
+    "tailwindcss": "^3.0.12"
+  }
+}
