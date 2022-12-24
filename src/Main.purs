@@ -23,5 +23,6 @@ main = do
     halogenIO <- HV.runUI rootComponent unit body
     void $ H.liftEffect
       $ matchesWith (parse routeCodec) \mOld new ->
-          when (mOld /= Just new) do
-            launchAff_ $ halogenIO.query $ H.mkTell $ Navigate new
+          when (mOld /= Just new)
+            $ launchAff_ do
+                void $ halogenIO.query $ H.mkTell $ Navigate new

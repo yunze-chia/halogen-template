@@ -15,12 +15,12 @@
     "bundle:parcel": "parcel build assets/index.html --no-scope-hoist --no-source-maps"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "parcel": "^2.1.1",
-    "postcss": "^8.4.5",
-    "purescript": "^0.14.5",
+    "esbuild": "^0.16.10",
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.20",
+    "purescript": "^0.15.7",
     "purty": "^7.0.0",
-    "spago": "^0.20.3",
-    "tailwindcss": "^3.0.12"
+    "spago": "^0.20.9",
+    "tailwindcss": "^3.2.4"
   }
 }
