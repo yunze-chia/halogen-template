@@ -10,7 +10,9 @@
   , "routing"
   , "routing-duplex"
   , "safe-coerce"
+  , "spec"
+  , "spec-discovery"
   ]
 , packages = ./packages.dhall
-, sources = [ "src/**/*.purs" ]
+, sources = [ "src/**/*.purs", "test/**/*.purs" ]
 }
